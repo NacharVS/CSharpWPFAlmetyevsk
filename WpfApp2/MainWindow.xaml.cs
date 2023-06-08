@@ -46,11 +46,11 @@ namespace WpfApp2
 
         private void list1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var buff = users.Find(x => x.Name + " " + x.Surname == list1.SelectedItem.ToString());
-            lb1.Content = buff.Name;
-            lb2.Content = buff.Surname;
-            lb3.Content = buff.SecondName;
-            lb4.Content = buff.Vacancy;
+            //var buff = users.Find(x => x.Name + " " + x.Surname == list1.SelectedItem.ToString());
+            //lb1.Content = buff.Name;
+            //lb2.Content = buff.Surname;
+            //lb3.Content = buff.SecondName;
+            //lb4.Content = buff.Vacancy;
             //foreach (var user in users)
             //{
 
@@ -68,10 +68,16 @@ namespace WpfApp2
         private void ListUsersRefresh()
         {
             list1.Items.Clear();
-            foreach (User user in users)
+            var bufferList = MongoDBExamples.FindAllDocument();
+            foreach (User user in bufferList)
             {
-                list1.Items.Add(user.Name + " " + user.Surname);
+                list1.Items.Add(user.Name);
             }
+        }
+
+        private void list1_Loaded(object sender, RoutedEventArgs e)
+        {
+            ListUsersRefresh();
         }
     }
 }
