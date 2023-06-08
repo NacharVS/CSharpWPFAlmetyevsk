@@ -46,11 +46,12 @@ namespace WpfApp2
 
         private void list1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //var buff = users.Find(x => x.Name + " " + x.Surname == list1.SelectedItem.ToString());
-            //lb1.Content = buff.Name;
-            //lb2.Content = buff.Surname;
-            //lb3.Content = buff.SecondName;
-            //lb4.Content = buff.Vacancy;
+
+            var buff = MongoDBExamples.FindDocument(list1.SelectedItem.ToString());
+            lb1.Content = buff.Name;
+            lb2.Content = buff.Surname;
+            lb3.Content = buff.SecondName;
+            lb4.Content = buff.Vacancy;
             //foreach (var user in users)
             //{
 
