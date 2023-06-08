@@ -20,11 +20,10 @@ namespace WpfApp2
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<User> users;
+        User users;
         public MainWindow()
         {
-            InitializeComponent();
-            users = new List<User>();
+            InitializeComponent();           
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -47,11 +46,14 @@ namespace WpfApp2
         private void list1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-            var buff = MongoDBExamples.FindDocument(list1.SelectedItem.ToString());
-            lb1.Content = buff.Name;
-            lb2.Content = buff.Surname;
-            lb3.Content = buff.SecondName;
-            lb4.Content = buff.Vacancy;
+            if(list1.SelectedIndex >= 0)
+            {
+                var buff = MongoDBExamples.FindDocument(list1.SelectedItem.ToString());
+                lb1.Content = buff.Name;
+                lb2.Content = buff.Surname;
+                lb3.Content = buff.SecondName;
+                lb4.Content = buff.Vacancy;
+            }
             //foreach (var user in users)
             //{
 
@@ -79,6 +81,30 @@ namespace WpfApp2
         private void list1_Loaded(object sender, RoutedEventArgs e)
         {
             ListUsersRefresh();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            MongoDBExamples.RemoveDocument(list1.SelectedItem.ToString());
+            ListUsersRefresh();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+
+            MongoDBExamples.ReplaceDocument(list1.SelectedItem.ToString(), new User(tbox1.Text, tbox2.Text, tbox3.Text, tbox4.Text));
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            if (list1.SelectedIndex >= 0)
+            {
+                var buff = MongoDBExamples.FindDocument(list1.SelectedItem.ToString());
+                tbox1.Text = buff.Name;
+                tbox2.Text = buff.Surname;
+                tbox3.Text = buff.SecondName;
+                tbox4.Text = buff.Vacancy;             
+            }
         }
     }
 }

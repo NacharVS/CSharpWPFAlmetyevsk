@@ -31,5 +31,21 @@ namespace WpfApp2
             var users = collection.Find(x => x.Name == name).FirstOrDefault();
             return users;
         }
+
+        public static void RemoveDocument(string name)
+        {
+            var mongoClient = new MongoClient("mongodb://localhost");
+            var database = mongoClient.GetDatabase("TestDatabase");
+            var collection = database.GetCollection<User>("Users");
+            collection.DeleteOne(x => x.Name == name);
+        }
+
+        public static void ReplaceDocument(string name, User user)
+        {
+            var mongoClient = new MongoClient("mongodb://localhost");
+            var database = mongoClient.GetDatabase("TestDatabase");
+            var collection = database.GetCollection<User>("Users");
+            collection.ReplaceOne(x => x.Name == name, user);
+        }
     }
 }
