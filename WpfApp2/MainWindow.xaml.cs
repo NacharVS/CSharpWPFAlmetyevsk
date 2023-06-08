@@ -20,11 +20,11 @@ namespace WpfApp2
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        List<User> users;
         public MainWindow()
         {
             InitializeComponent();
-
+            users = new List<User>();
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -34,13 +34,27 @@ namespace WpfApp2
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            list1.Items.Add(tbox1.Text);
+            users.Add(new User(tbox1.Text, tbox2.Text, tbox3.Text, tbox4.Text));
             tbox1.Clear();
+            tbox2.Clear();
+            tbox3.Clear();
+            tbox4.Clear();
+            ListUsersRefresh();
+
         }
 
         private void list1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             lb1.Content = list1.SelectedItem;
+        }
+
+        private void ListUsersRefresh()
+        {
+            list1.Items.Clear();
+            foreach (User user in users)
+            {
+                list1.Items.Add(user.Name + " " + user.Surname);
+            }
         }
     }
 }
