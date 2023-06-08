@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MongoDB.Bson;
 
 namespace WpfApp2
 {
@@ -16,6 +12,7 @@ namespace WpfApp2
             Vacancy = vacancy;
         }
 
+        public ObjectId id;
         public string Name { get; set; }
         public string Surname { get; set; }
         public string SecondName { get; set; }

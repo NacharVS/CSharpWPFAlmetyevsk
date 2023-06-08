@@ -34,7 +34,8 @@ namespace WpfApp2
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            users.Add(new User(tbox1.Text, tbox2.Text, tbox3.Text, tbox4.Text));
+            //users.Add(new User(tbox1.Text, tbox2.Text, tbox3.Text, tbox4.Text));
+            MongoDBExamples.CreateDocument(new User(tbox1.Text, tbox2.Text, tbox3.Text, tbox4.Text));
             tbox1.Clear();
             tbox2.Clear();
             tbox3.Clear();
