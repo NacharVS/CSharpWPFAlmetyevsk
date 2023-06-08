@@ -20,7 +20,6 @@ namespace WpfApp2
     /// </summary>
     public partial class MainWindow : Window
     {
-        User users;
         public MainWindow()
         {
             InitializeComponent();           
@@ -93,6 +92,7 @@ namespace WpfApp2
         {
 
             MongoDBExamples.ReplaceDocument(list1.SelectedItem.ToString(), new User(tbox1.Text, tbox2.Text, tbox3.Text, tbox4.Text));
+            MessageBox.Show("Replacemen succesfully done");
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
@@ -105,6 +105,11 @@ namespace WpfApp2
                 tbox3.Text = buff.SecondName;
                 tbox4.Text = buff.Vacancy;             
             }
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            MongoDBExamples.UpdateDocument();
         }
     }
 }

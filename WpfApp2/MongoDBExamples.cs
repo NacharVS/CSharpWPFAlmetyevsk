@@ -47,5 +47,14 @@ namespace WpfApp2
             var collection = database.GetCollection<User>("Users");
             collection.ReplaceOne(x => x.Name == name, user);
         }
+
+        public static void UpdateDocument()
+        {
+            var mongoClient = new MongoClient("mongodb://localhost");
+            var database = mongoClient.GetDatabase("TestDatabase");
+            var collection = database.GetCollection<User>("Users");
+            var definition = Builders<User>.Update.Set("Vacancy", "Employe");
+            collection.UpdateOne(x => x.Name == "Ivan", definition);
+        }
     }
 }
