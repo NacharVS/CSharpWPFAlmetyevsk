@@ -45,7 +45,23 @@ namespace WpfApp2
 
         private void list1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            lb1.Content = list1.SelectedItem;
+            var buff = users.Find(x => x.Name + " " + x.Surname == list1.SelectedItem.ToString());
+            lb1.Content = buff.Name;
+            lb2.Content = buff.Surname;
+            lb3.Content = buff.SecondName;
+            lb4.Content = buff.Vacancy;
+            //foreach (var user in users)
+            //{
+
+            //if(list1.SelectedItem.ToString() == user.Name + " " + user.Surname)
+            //{
+            //    lb1.Content = user.Name;
+            //    lb2.Content = user.Surname;
+            //    lb3.Content = user.SecondName;
+            //    lb4.Content = user.Vacancy;
+
+            //}
+            //}
         }
 
         private void ListUsersRefresh()

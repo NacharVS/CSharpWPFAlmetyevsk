@@ -10,11 +10,14 @@
         <TextBox x:Name="tbox1" HorizontalAlignment="Left" Margin="10,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="327" TextChanged="TextBox_TextChanged"/>
         <TextBlock x:Name="tblock1" HorizontalAlignment="Left" Margin="365,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="51" Width="327"/>
         <Button Content="ADD" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" Click="Button_Click" Width="55"/>
-        <Label x:Name="lb1" Content="Label" HorizontalAlignment="Left" Margin="53,277,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label x:Name="lb1" Content="Label" HorizontalAlignment="Left" Margin="10,218,0,0" VerticalAlignment="Top" Width="130"/>
         <ListBox x:Name="list1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="400,12,35,10" SelectionChanged="list1_SelectionChanged"/>
         <TextBox x:Name="tbox4" HorizontalAlignment="Left" Margin="10,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="327" TextChanged="TextBox_TextChanged"/>
         <TextBox x:Name="tbox3" HorizontalAlignment="Left" Margin="10,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="327" TextChanged="TextBox_TextChanged"/>
         <TextBox x:Name="tbox2" HorizontalAlignment="Left" Margin="10,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="327" TextChanged="TextBox_TextChanged"/>
+        <Label x:Name="lb2" Content="Label" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label x:Name="lb4" Content="Label" HorizontalAlignment="Left" Margin="10,317,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label x:Name="lb3" Content="Label" HorizontalAlignment="Left" Margin="10,291,0,0" VerticalAlignment="Top" Width="130"/>
 
     </Grid>
 </Window>
