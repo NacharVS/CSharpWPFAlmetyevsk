@@ -20,9 +20,11 @@ namespace WpfApp2
     /// </summary>
     public partial class MainWindow : Window
     {
+        string[] vacancies = new string[5] { "Traine", "Employe", "Manager", "HighManager", "Director" };
         public MainWindow()
         {
-            InitializeComponent();           
+            InitializeComponent();
+            cBox.ItemsSource = vacancies;
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -33,11 +35,11 @@ namespace WpfApp2
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             //users.Add(new User(tbox1.Text, tbox2.Text, tbox3.Text, tbox4.Text));
-            MongoDBExamples.CreateDocument(new User(tbox1.Text, tbox2.Text, tbox3.Text, tbox4.Text));
+            MongoDBExamples.CreateDocument(new User(tbox1.Text, tbox2.Text, tbox3.Text, cBox.SelectedValue.ToString()));
             tbox1.Clear();
             tbox2.Clear();
             tbox3.Clear();
-            tbox4.Clear();
+            
             ListUsersRefresh();
 
         }
@@ -91,7 +93,7 @@ namespace WpfApp2
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
 
-            MongoDBExamples.ReplaceDocument(list1.SelectedItem.ToString(), new User(tbox1.Text, tbox2.Text, tbox3.Text, tbox4.Text));
+            MongoDBExamples.ReplaceDocument(list1.SelectedItem.ToString(), new User(tbox1.Text, tbox2.Text, tbox3.Text, cBox.SelectedValue.ToString()));
             MessageBox.Show("Replacemen succesfully done");
         }
 
@@ -103,7 +105,7 @@ namespace WpfApp2
                 tbox1.Text = buff.Name;
                 tbox2.Text = buff.Surname;
                 tbox3.Text = buff.SecondName;
-                tbox4.Text = buff.Vacancy;             
+                cBox.SelectedItem = buff.Vacancy;
             }
         }
 

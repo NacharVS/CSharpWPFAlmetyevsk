@@ -13,19 +13,19 @@
         </Grid.ColumnDefinitions>
         <TextBox x:Name="tbox1" HorizontalAlignment="Left" Margin="10,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="327" TextChanged="TextBox_TextChanged"/>
         <TextBlock x:Name="tblock1" HorizontalAlignment="Left" Margin="365,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="51" Width="327" Grid.ColumnSpan="2"/>
-        <Button Content="ADD" HorizontalAlignment="Left" Margin="10,160,0,0" VerticalAlignment="Top" Click="Button_Click" Width="55"/>
-        <Label x:Name="lb1" Content="Label" HorizontalAlignment="Left" Margin="10,218,0,0" VerticalAlignment="Top" Width="130"/>
+        <Button Content="ADD" HorizontalAlignment="Left" Margin="5,242,0,0" VerticalAlignment="Top" Click="Button_Click" Width="55"/>
+        <Label x:Name="lb1" Content="Label" HorizontalAlignment="Left" Margin="10,299,0,0" VerticalAlignment="Top" Width="130"/>
         <ListBox x:Name="list1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="400,12,35,10" SelectionChanged="list1_SelectionChanged" Grid.ColumnSpan="2" Loaded="list1_Loaded"/>
-        <TextBox x:Name="tbox4" HorizontalAlignment="Left" Margin="10,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="327" TextChanged="TextBox_TextChanged"/>
         <TextBox x:Name="tbox3" HorizontalAlignment="Left" Margin="10,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="327" TextChanged="TextBox_TextChanged"/>
         <TextBox x:Name="tbox2" HorizontalAlignment="Left" Margin="10,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="327" TextChanged="TextBox_TextChanged"/>
-        <Label x:Name="lb2" Content="Label" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top" Width="130"/>
-        <Label x:Name="lb4" Content="Label" HorizontalAlignment="Left" Margin="10,317,0,0" VerticalAlignment="Top" Width="130"/>
-        <Label x:Name="lb3" Content="Label" HorizontalAlignment="Left" Margin="10,291,0,0" VerticalAlignment="Top" Width="130"/>
-        <Button Content="REMOVE" HorizontalAlignment="Left" Margin="285,160,0,0" VerticalAlignment="Top" Width="65" Click="Button_Click_1"/>
-        <Button Content="GetData" HorizontalAlignment="Left" Margin="75,160,0,0" VerticalAlignment="Top" Width="85" Height="53" FontSize="20" Click="Button_Click_3"/>
-        <Button Content="VarOne" HorizontalAlignment="Left" Margin="185,165,0,0" VerticalAlignment="Top" Height="48" Width="59" Click="Button_Click_2"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="214,244,0,0" VerticalAlignment="Top" Click="Button_Click_4"/>
+        <Label x:Name="lb2" Content="Label" HorizontalAlignment="Left" Margin="10,341,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label x:Name="lb4" Content="Label" HorizontalAlignment="Left" Margin="10,398,0,0" VerticalAlignment="Top" Width="130"/>
+        <Label x:Name="lb3" Content="Label" HorizontalAlignment="Left" Margin="10,372,0,0" VerticalAlignment="Top" Width="130"/>
+        <Button Content="REMOVE" HorizontalAlignment="Left" Margin="280,242,0,0" VerticalAlignment="Top" Width="65" Click="Button_Click_1"/>
+        <Button Content="GetData" HorizontalAlignment="Left" Margin="70,242,0,0" VerticalAlignment="Top" Width="85" Height="53" FontSize="20" Click="Button_Click_3"/>
+        <Button Content="VarOne" HorizontalAlignment="Left" Margin="180,247,0,0" VerticalAlignment="Top" Height="48" Width="59" Click="Button_Click_2"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="209,326,0,0" VerticalAlignment="Top" Click="Button_Click_4"/>
+        <ComboBox x:Name="cBox" HorizontalAlignment="Left" Margin="15,121,0,0" VerticalAlignment="Top" Width="322"/>
 
 
     </Grid>
